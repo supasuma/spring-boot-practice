@@ -1,9 +1,7 @@
 package io.javabrains.springbootstarter.topic;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,6 +22,13 @@ public class TopicController {
         return topicService.getTopic(id);
     }
 
-}
+    @RequestMapping(method= RequestMethod.POST, value="/topics")
+    public void addTopic(@RequestBody Topic topic) {
+        topicService.addTopic(topic);
 
-UP TO HERE https://www.youtube.com/watch?v=AI2oBJkPK3c&list=PLmbC-xnvykcghOSOJ1ZF6ja3aOgZAgaMO&index=19
+    }
+
+
+
+    https://www.youtube.com/watch?v=AI2oBJkPK3c&list=PLmbC-xnvykcghOSOJ1ZF6ja3aOgZAgaMO&index=19
+}
